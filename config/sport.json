@@ -1,0 +1,10 @@
+{
+  "name": "sport",
+  "sources": [
+    {
+      "httpMethod": "GET",
+      "expectedResponseCode": 200,
+      "url": "http://www.bbc.co.uk/sport"
+    }
+  ]
+}
