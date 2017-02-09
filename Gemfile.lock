@@ -3,6 +3,7 @@ GEM
   specs:
     haml (4.0.7)
       tilt
+    json (1.8.3)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -17,6 +18,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  json
   rack
   sinatra
 

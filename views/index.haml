@@ -5,5 +5,6 @@
     %meta{:charset => "UTF-8"}/
     %title Title
   %body
-    %h1
-      Blah blah
+    - url_paths.each do |path|
+      %a{href: path}
+        = path
