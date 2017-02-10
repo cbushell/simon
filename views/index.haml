@@ -8,5 +8,6 @@
       = "Simple Monitor - #{config['name']} status"
   %body
     - config['sources'].each do |source|
-      %h1
-        = source['label']
+      %div.container
+        %h1
+          = source['label']
