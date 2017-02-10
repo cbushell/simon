@@ -1,3 +1,10 @@
 $(document).ready(function () {
-   console.log('foobars');
+
+    window.setInterval(function () {
+        console.debug('Checking health');
+
+        $.get("test", function (data) {
+            console.log(data);
+        });
+    }, 5000);
 });
