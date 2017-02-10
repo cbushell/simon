@@ -5,8 +5,8 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
     %title
-      = "Simple Monitor - #{config_name} status"
+      = "Simple Monitor - #{config['name']} status"
   %body
-    - sources.each do |s|
+    - config['sources'].each do |source|
       %h1
-        = s
+        = source['url']

@@ -13,9 +13,9 @@ class SimonApp < Sinatra::Base
     haml :index, :locals => {sources: settings.configs.config_names}
   end
 
-  get '/:config_name' do
-    haml :status, :locals => {config_name: params[:config_name],
-                              sources: settings.configs.config_for(params[:config_name])['sources'].collect { |s| s['url'] }}
+  get '/:config_name_as_url' do
+    config = settings.configs.config_for(params[:config_name_as_url])
+    haml :status, :locals => {config: config}
   end
 
   get '/:config_name/test' do
