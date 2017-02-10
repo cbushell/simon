@@ -7,7 +7,7 @@ class SimonApp < Sinatra::Base
 
   configure do
     config_filename = ENV['SIMON_CONFIG'] || 'config/news.json'
-    
+
     set :config, JSON.parse(File.read(config_filename))
   end
 

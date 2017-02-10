@@ -4,12 +4,14 @@
     {
       "httpMethod": "GET",
       "expectedResponseCode": 200,
-      "url": "http://www.bbc.co.uk/news"
+      "url": "http://www.bbc.co.uk/news",
+      "label": "BBC News"
     },
     {
       "httpMethod": "GET",
       "expectedResponseCode": 200,
-      "url": "http://www.skynews.com"
+      "url": "http://www.skynews.com",
+      "label": "Sky News"
     }
   ]
 }

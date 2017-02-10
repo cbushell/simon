@@ -5,6 +5,7 @@
       "httpMethod": "GET",
       "expectedResponseCode": 200,
       "url": "http://www.bbc.co.uk/sport"
+      "label": "BBC Sport News"
     }
   ]
 }
