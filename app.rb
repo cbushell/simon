@@ -2,6 +2,7 @@ require 'json'
 require 'sinatra'
 require 'httparty'
 require_relative 'lib/configs'
+require_relative 'lib/service_test'
 
 class SimonApp < Sinatra::Base
 
@@ -18,15 +19,11 @@ class SimonApp < Sinatra::Base
     haml :status, :locals => {config: config}
   end
 
-  get '/:config_name/test' do
+  get '/:config_name_as_url/test' do
     content_type :json
 
-    settings.configs.config_for(params[:config_name])['sources'].collect do |source|
-      url = source['url']
-      method = source['method']
-
-      {url: url, responseCode: HTTParty.get(url).response.code}
-    end.to_json
+    config = settings.configs.config_for(params[:config_name_as_url])
+    ServiceTest.new(config).test_services.to_json
   end
 
 end
