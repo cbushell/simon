@@ -1,12 +1,12 @@
 !!!
 %html{:lang => "en"}
   %head
+    %link{:rel => "stylesheet", :href => "simon.css"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
-    %title Simple Monitor
+    %title
+      = "Simple Monitor - #{config['name']} status"
   %body
-    %ul
-      - sources.each do |source|
-        %li
-          %a{href: source}
-            = source
+    - config['sources'].each do |source|
+      %h1
+        = source['url']
