@@ -3,9 +3,13 @@ body {
     background-color: black;
 }
 
-.source {
+.label {
     color: white;
     font-family: Helvetica;
+}
+
+.small{
+    font-size: 0.8em;
 }
 
 .container {

@@ -11,5 +11,7 @@
   %body
     - config['sources'].each do |source|
       %div.container
-        %h1.source
+        %h1.label
           = source['label']
+        %h3.label.small
+          = source['url']
