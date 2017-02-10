@@ -7,4 +7,6 @@
     %title
       = "Simple Monitor - #{config_name} status"
   %body
-
+    - sources.each do |s|
+      %h1
+        = s

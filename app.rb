@@ -12,7 +12,7 @@ class SimonApp < Sinatra::Base
       config_name = config['name']
 
       get "/#{config_name}" do
-        haml :status, :locals => {config_name: config_name}
+        haml :status, :locals => {config_name: config_name, sources: config['sources'].collect{|s| s['url']}}
       end
 
       get "/:config_name/test" do
