@@ -12,7 +12,7 @@ class SimonApp < Sinatra::Base
       config_name = config['name']
 
       get "/#{config_name}" do
-        '<html><body><h1>Foo</h1></body></html>'
+        haml :status, :locals => {config_name: config_name}
       end
 
       get "/:config_name/test" do
