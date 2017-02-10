@@ -1,4 +1,4 @@
-class Configs
+class SimonConfig
 
   def initialize(dir)
     @configs = {}
