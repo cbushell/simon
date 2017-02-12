@@ -1,6 +1,7 @@
 require 'json'
 require 'sinatra'
 require 'httparty'
+require_relative 'lib/service_stat'
 require_relative 'lib/service_tester'
 
 class SimonApp < Sinatra::Base

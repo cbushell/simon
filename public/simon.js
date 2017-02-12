@@ -5,12 +5,18 @@ $(document).ready(function () {
 
         $.get("test", function (healthChecks) {
             $(healthChecks).each(function (i, healthCheck) {
-                console.log(healthCheck.url);
+                console.log(healthCheck);
 
-                if(healthCheck.responseCode != 200){
+                if (healthCheck.responseCode != 200) {
                     $("div:contains(" + healthCheck.url + ")").toggleClass("healthy unhealthy");
                 }
 
+                $("div:contains(" + healthCheck.url + ") .stats").text(
+                    "#tests: " + healthCheck.numberOfTestsPerformed +
+                    " #failed:" + healthCheck.failCount +
+                    " #succeeded: " + healthCheck.successCount
+                )
+                ;
             });
         });
     }, 5000);
