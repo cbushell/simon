@@ -9,7 +9,12 @@ class ServiceTest
       url = source['url']
       method = source['method']
 
-      {url: url, responseCode: HTTParty.get(url).response.code}
+      startTime = Time.now
+      response = HTTParty.get(url).response
+      
+      {url: url,
+       responseCode: response.code,
+       responseTime: Time.now - startTime}
     end
   end
 
