@@ -1,14 +1,18 @@
 require 'json'
 require 'sinatra'
 require 'httparty'
-require_relative 'lib/service_test'
+require_relative 'lib/service_tester'
 
 class SimonApp < Sinatra::Base
 
   configure do
     config_filename = ENV['SIMON_CONFIG'] || 'config/news.json'
 
-    set :config, JSON.parse(File.read(config_filename))
+    config = JSON.parse(File.read(config_filename))
+    service_tester = ServiceTester.new(config)
+
+    set :config, config
+    set :service_tester, service_tester
   end
 
   get '/' do
@@ -17,7 +21,7 @@ class SimonApp < Sinatra::Base
 
   get '/test' do
     content_type :json
-    ServiceTest.new(settings.config).test_services.to_json
+    settings.service_tester.test_services.to_json
   end
 
 end

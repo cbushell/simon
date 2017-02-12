@@ -1,4 +1,4 @@
-class ServiceTest
+class ServiceTester
 
   def initialize(config)
     @config = config
@@ -11,7 +11,7 @@ class ServiceTest
 
       startTime = Time.now
       response = HTTParty.get(url).response
-      
+
       {url: url,
        responseCode: response.code,
        responseTime: Time.now - startTime}
