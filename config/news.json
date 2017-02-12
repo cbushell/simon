@@ -8,6 +8,16 @@
       "label": "BBC News"
     },
     {
+      "httpMethod": "POST",
+      "expectedResponseCode": 200,
+      "url": "https://www.bbc.com/signin?action=pw-uplift&context=news&nonce=x2mMW4Mn-JJsND6Qnbnmsx_qVKmMnLNh-9cM&ptrt=http%3A%2F%2Fwww.bbc.co.uk%2Fnews&userOrigin=news",
+      "label": "BBC News (Signin)",
+      "data": {
+        "username": "foo",
+        "password": "bar"
+      }
+    },
+    {
       "httpMethod": "GET",
       "expectedResponseCode": 200,
       "url": "http://www.skynews.com",
